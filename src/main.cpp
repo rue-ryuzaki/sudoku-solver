@@ -3,7 +3,7 @@
 *
 * Simple CLI C++ sudoku puzzles solver (sudoku-solver)
 *
-* Copyright (c) 2022 Golubchikov Mihail <https://github.com/rue-ryuzaki>
+* Copyright (c) 2022-2023 Golubchikov Mihail <https://github.com/rue-ryuzaki>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -24,18 +24,18 @@
 * SOFTWARE.
 */
 
-#include <argparse/argparse.hpp>
+#include <argparse/argparse_decl.hpp>
 
 #include "sudoku.hpp"
 
 char constexpr version[] = "%(prog)s v0.1.0";
 
-int main(int argc, char const* argv[])
+int main(int argc, char const* const argv[])
 {
     auto parser = argparse::ArgumentParser(argc, argv)
             .description("Simple CLI C++ sudoku puzzles solver")
             .fromfile_prefix_chars("@")
-            .epilog("by rue-ryuzaki (c) 2022");
+            .epilog("by rue-ryuzaki (c) 2022-2023");
     parser.add_argument("--version")
             .action("version")
             .version(version);

@@ -3,7 +3,7 @@
 *
 * Simple CLI C++ sudoku puzzles solver (sudoku-solver)
 *
-* Copyright (c) 2022 Golubchikov Mihail <https://github.com/rue-ryuzaki>
+* Copyright (c) 2022-2023 Golubchikov Mihail <https://github.com/rue-ryuzaki>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -281,7 +281,7 @@ private:
         // check values
         for (std::size_t y = 0; y < board_height(); ++y) {
             for (std::size_t x = 0; x < board_width(); ++x) {
-                if (board[y][x] > max_value()) {
+                if (static_cast<std::size_t>(board[y][x]) > max_value()) {
                     return false;
                 }
             }
